@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    image: usuarios-angular-ui:latest
+    ports:
+      - "4200:80"
+    restart: unless-stopped

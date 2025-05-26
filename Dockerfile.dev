@@ -1,0 +1,14 @@
+# Etapa de desenvolvimento
+FROM node:18-alpine
+# Criar diretório de trabalho
+WORKDIR /app
+# Copia apenas os arquivos necessários para instalar dependências
+COPY package*.json ./
+# Instala dependências
+RUN npm install
+# Copia o restante do código do projeto
+COPY . .
+# Expõe a porta 4200 (padrão do ng serve)
+EXPOSE 4200
+# Comando padrão
+CMD ["npm", "run", "start"]
